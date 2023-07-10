@@ -62,7 +62,7 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = "backendencuesta.urls"
 
-CORS_ALLOWED_ORIGINS = True
+CORS_ALLOW_ALL_ORIGINS = True
 
 TEMPLATES = [
     {
