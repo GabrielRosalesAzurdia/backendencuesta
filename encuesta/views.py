@@ -23,7 +23,7 @@ def darResultados(request):
                 respuestas[i-1][0] = respuestas[i-1][0] + 1
             if(actual == 1):
                 respuestas[i-1][1] = respuestas[i-1][1] + 1
-            if(actual == 3):
+            if(actual == 2):
                 respuestas[i-1][2] = respuestas[i-1][2] + 1
     return Response(json.dumps(respuestas))
         
