@@ -15,16 +15,17 @@ class AnswerViewSet(viewsets.ModelViewSet):
 def darResultados(request):
     queryset = Answer.objects.all()
     respuestas = [[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]]
-    # for question in queryset:
-    #     i = 1
-    #     while i<=15:
-    #         actual = question.getQuestion(i)
-    #         if (actual == 0):
-    #             respuestas[i-1][0] = respuestas[i-1][0] + 1
-    #         if(actual == 1):
-    #             respuestas[i-1][1] = respuestas[i-1][1] + 1
-    #         if(actual == 2):
-    #             respuestas[i-1][2] = respuestas[i-1][2] + 1
+    for question in queryset:
+        i = 1
+        while i<=15:
+            actual = question.getQuestion(i)
+            return Response({'data':json.dumps(actual)})
+            if (actual == 0):
+                respuestas[i-1][0] = respuestas[i-1][0] + 1
+            if(actual == 1):
+                respuestas[i-1][1] = respuestas[i-1][1] + 1
+            if(actual == 2):
+                respuestas[i-1][2] = respuestas[i-1][2] + 1
     data = {'content':json.dumps(respuestas)}
     return Response(data)
         
