@@ -19,11 +19,11 @@ def darResultados(request):
         i = 1
         while i<=15:
             actual = question.getQuestion(i)
-            return Response({'data':json.dumps(actual)})
             if (actual == 0):
                 respuestas[i-1][0] = respuestas[i-1][0] + 1
             if(actual == 1):
                 respuestas[i-1][1] = respuestas[i-1][1] + 1
+                Response({'content':json.dumps(respuestas)})
             if(actual == 2):
                 respuestas[i-1][2] = respuestas[i-1][2] + 1
     data = {'content':json.dumps(respuestas)}
