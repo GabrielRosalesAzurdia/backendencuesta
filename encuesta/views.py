@@ -14,7 +14,7 @@ class AnswerViewSet(viewsets.ModelViewSet):
 @api_view(['GET'])
 def darResultados(request):
     queryset = Answer.objects.all()
-    respuestas = [[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]]
+    respuestas = [[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0]]
     for question in queryset:
         i = 1
         while i<=15:
@@ -23,7 +23,6 @@ def darResultados(request):
                 respuestas[i-1][0] = respuestas[i-1][0] + 1
             if(actual == 1):
                 respuestas[i-1][1] = respuestas[i-1][1] + 1
-                Response({'content':json.dumps(respuestas)})
             if(actual == 2):
                 respuestas[i-1][2] = respuestas[i-1][2] + 1
     data = {'content':json.dumps(respuestas)}
