@@ -25,5 +25,7 @@ def darResultados(request):
                 respuestas[i-1][1] = respuestas[i-1][1] + 1
             if(actual == 2):
                 respuestas[i-1][2] = respuestas[i-1][2] + 1
+    return Response("PRUEBA DE ENVIO DE DATOS")
+
     return Response(json.dumps(respuestas))
         
