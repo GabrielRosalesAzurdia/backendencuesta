@@ -6,6 +6,6 @@ router = routers.DefaultRouter()
 router.register(r'answers', AnswerViewSet)
 
 urlpatterns = [
-    path('', include(router.urls)) ,
     path('resultados/', darResultados),
+    path('', include(router.urls)) ,
 ]

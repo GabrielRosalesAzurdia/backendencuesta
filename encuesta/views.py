@@ -2,7 +2,6 @@ from rest_framework import viewsets
 from .serializer import AnswerSerializer
 from .models import Answer
 from django.views.decorators.csrf import csrf_exempt
-from django.http import HttpResponse
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 import json
@@ -11,7 +10,8 @@ class AnswerViewSet(viewsets.ModelViewSet):
     queryset = Answer.objects.all()
     serializer_class = AnswerSerializer
 
-@api_view(['GET', 'POST'])
+@csrf_exempt
+@api_view(['GET'])
 def darResultados(request):
     queryset = Answer.objects.all()
     respuestas = [[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]]
