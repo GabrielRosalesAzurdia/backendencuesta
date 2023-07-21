@@ -25,6 +25,7 @@ def darResultados(request):
                 respuestas[i-1][1] = respuestas[i-1][1] + 1
             if(actual == 2):
                 respuestas[i-1][2] = respuestas[i-1][2] + 1
+            i = i + 1
     data = {'content':json.dumps(respuestas)}
     return Response(data)
         
